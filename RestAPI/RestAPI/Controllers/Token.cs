@@ -18,6 +18,7 @@ namespace RestAPI.Controllers
     public class Token : ControllerBase
     {
         [AllowAnonymous]
+        [HttpGet]
         public string Get()
         {
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -44,7 +45,7 @@ namespace RestAPI.Controllers
         }
 
 
-        [Route("test")]        
+        [HttpGet("test")]        
         public IActionResult TestToken()
         {
             return Ok();
