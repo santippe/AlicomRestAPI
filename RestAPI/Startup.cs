@@ -72,6 +72,8 @@ namespace RestAPI
                         IssuerSigningKey = new SymmetricSecurityKey(key)
                     };
                 });
+            services.AddLogging();
+            services.AddSingleton<CacheManager.CacheManager>();
             services.AddAuthorization();
         }
 
